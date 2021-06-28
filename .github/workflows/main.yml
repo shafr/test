@@ -15,8 +15,8 @@ jobs:
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
       - name: Echo file
         run: echo "test 1234567890" >> file.txt        
-      - uses: edwardgeorge/file-outputs-action@main
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@master
         with:
-          files: |
-            output1=file.txt
-    
+          message: 'Example of message !'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
