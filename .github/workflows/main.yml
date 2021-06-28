@@ -6,6 +6,8 @@ jobs:
     outputs:
       url: ${{ steps.step1.outputs.url }} # map step output to job output
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Set selected color
         run: echo '::set-output name=SELECTED_COLOR::green'
         id: random-color-generator
