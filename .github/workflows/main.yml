@@ -17,7 +17,7 @@ jobs:
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
       - name: Echo file
         run: echo "test 1234567890" >> file.txt        
-      - uses: jdvr/action-add-comment@master
+      - uses: jdvr/action-add-comment@main
         with:
           comment: 'Current build $BUILD_NUMBER has passed ✅'
         env:
