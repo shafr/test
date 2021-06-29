@@ -14,4 +14,4 @@ jobs:
       - uses: zattoo/output@v1
         with:
           token:  ${{github.token}}
-          sources: 'file.md'
+          sources: 'dimi/HELLO_WORLD.md'
