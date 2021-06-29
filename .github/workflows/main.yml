@@ -1,5 +1,5 @@
 name: Do things
-on: push
+on: pull_request
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -7,16 +7,7 @@ jobs:
       url: ${{ steps.step1.outputs.url }} # map step output to job output
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set selected color
-        run: echo '::set-output name=SELECTED_COLOR::green'
-        id: random-color-generator
-      - name: set second
-        run: echo "::set-output name=action_fruit::strawberry"
-      - name: Get color
-        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
-      - name: Echo file
-        run: echo "test 1234567890" >> file.txt        
+        uses: actions/checkout@v2     
       - uses: jdvr/action-add-comment@main
         with:
           comment: "Current build $BUILD_NUMBER has passed ✅"
