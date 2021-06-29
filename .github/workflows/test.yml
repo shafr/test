@@ -20,5 +20,5 @@ jobs:
         run: echo "test 1234567890" >> file.md        
       - uses: zattoo/output@v1
         with:
-          token: "{{ secrets.GITHUB_TOKEN }}"
+          token:  ${{github.token}}
           sources: 'file.md'
