@@ -22,4 +22,4 @@ jobs:
           comment: 'Current build $BUILD_NUMBER has passed ✅'
         env:
           BUILD_NUMBER: 1234
-          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: "{{ secrets.GITHUB_TOKEN }}"
