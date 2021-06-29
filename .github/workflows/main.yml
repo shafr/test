@@ -17,12 +17,9 @@ jobs:
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
       - name: Echo file
         run: echo "test 1234567890" >> file.txt        
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@master
+      - uses: jdvr/action-add-comment@master
         with:
-          message: 'Example of message !'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       - uses: zattoo/output@v1
-#         with:
-#           token: ${{secrets.GITHUB_TOKEN}}
-#           sources:  'dimi/, README.md'
+          comment: 'Current build $BUILD_NUMBER has passed ✅'
+        env:
+          BUILD_NUMBER: 1234
+          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
