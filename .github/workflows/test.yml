@@ -1,5 +1,4 @@
-
-name: Do things 222
+name: Print contents of file
 on: pull_request
 jobs:
   job1:
@@ -13,5 +12,5 @@ jobs:
         run: echo "test 1234567890" >> file.md        
       - uses: zattoo/output@v1
         with:
-          token:  ${{github.token}}
+          token:  ${{ secrets.GITHUB_TOKEN }}
           sources: 'dimi/HELLO_WORLD.md'

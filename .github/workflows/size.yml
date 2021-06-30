@@ -1,4 +1,4 @@
-name: Do things 222
+name: Calculate Size of package
 on: pull_request
 jobs:
   job1:
@@ -7,6 +7,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2       
       - uses: antfu/export-size-action@v1
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            paths: dimi/
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          paths: dimi/
