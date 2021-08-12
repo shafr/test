@@ -1,4 +1,4 @@
-name: Print contents of file
+name: Print contents of secret
 on: pull_request
 jobs:
   job1:
@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Echo file
-        run: echo "test 1234567890" >> file.md        
-      - uses: zattoo/output@v1
-        with:
-          token:  ${{ secrets.GITHUB_TOKEN }}
-          sources: 'dimi/HELLO_WORLD.md'
+      - name: Run File
+        run: bash -x runme.sh
+#       - uses: zattoo/output@v1
+#         with:
+#           token:  ${{ secrets.GITHUB_TOKEN }}
+#           sources: 'dimi/HELLO_WORLD.md'
