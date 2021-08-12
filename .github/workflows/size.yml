@@ -1,0 +1,12 @@
+name: Calculate Size of package
+on: pull_request
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2       
+      - uses: antfu/export-size-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          paths: dimi/
